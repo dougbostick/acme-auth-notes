@@ -85,12 +85,17 @@ const addNote = (text) => {
   return async (dispatch) => {
     const token = window.localStorage.getItem("token");
     if (token) {
-      const response = await axios.post("/api/notes", {
-        headers: {
-          authorization: token,
+      const response = await axios.post(
+        "/api/notes",
+        {
+          text,
         },
-        text,
-      });
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      );
       console.log("addnotethunk", response);
       const data = response.data;
       console.log("addnote thunk data", data);

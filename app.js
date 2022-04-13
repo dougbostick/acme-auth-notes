@@ -55,8 +55,6 @@ app.delete("/api/notes/:id", async (req, res, next) => {
 });
 
 app.post("/api/notes", async (req, res, next) => {
-  console.log("req", req.headers, req.body.text);
-
   try {
     const note = req.body.text;
     const user = await User.byToken(req.headers.authorization);

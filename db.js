@@ -92,7 +92,6 @@ User.authenticate = async ({ username, password }) => {
 
 const syncAndSeed = async () => {
   await conn.sync({ force: true });
-
   const credentials = [
     { username: "lucy", password: "lucy_pw" },
     { username: "moe", password: "moe_pw" },
